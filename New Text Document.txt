@@ -1,0 +1,2 @@
+Slip : CREATE view v_slip as SELECT tb_santri.nama, tb_santri.kelas, tb_santri.status, tb_pembayaran.bulan, tb_pembayaran.spp, tb_pembayaran.uang_makan, tb_pembayaran.keterangan FROM tb_santri left JOIN tb_pembayaran ON tb_santri.nama=tb_pembayaran.nama_santri WHERE not tb_pembayaran.bulan is NULL;
+Rekap Spp & Makan : CREATE view v_rekap as SELECT tb_santri.nama, tb_santri.kelas, tb_pembayaran.bulan, tb_pembayaran.spp, tb_pembayaran.keterangan, tb_pembayaran.tgl FROM tb_santri RIGHT JOIN tb_pembayaran on tb_santri.nama=tb_pembayaran.nama_santri;
